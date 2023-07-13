@@ -41,3 +41,5 @@ elif choice == 5:
     cal.square()
 else:
     print("Неправильно написал цифру, лол")
+
+print("ярик лох")
