@@ -1,16 +1,21 @@
 import configparser
+
 config = configparser.ConfigParser()
 config.read("E:/git/cal/src/text.ini")
 from src.сalculator import Calculator
+
+
 class Process:
     def __init__(self):
         self.calculator = Calculator()
+
     def start(self):
         print(config.get("proc", "name"))
         self.first_number = int(input(config.get("proc", "first_number")))
         self.second_number = int(input(config.get("proc", "second_number")))
         self.choice = int(input(config.get("proc", "choice")))
         Process.solve(self)
+
     def solve(self):
         if self.choice == 1:
             self.calculator.sum(self.first_number, self.second_number)
