@@ -1,5 +1,4 @@
 from src.process import Process
-
 def main():
     process = Process()
     process.start()

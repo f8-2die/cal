@@ -1,17 +1,24 @@
+import configparser
+
+config = configparser.ConfigParser()
+config.read("E:/git/cal/src/text.ini")
+res = config.get("cal", "res")
+
 class Calculator:
-    def sum(self, a, b):
-        print(f"Результат операции {a} + {b} равен {a + b}")
+    def sum(self, first_number, second_number):
+        print(res, first_number + second_number)
 
-    def subtract(self, a, b):
-        print(f"Результат операции {a} - {b} равен {a - b}")
+    def subtract(self, first_number, second_number):
+        print(res, first_number - second_number)
 
-    def multiply(self, a, b):
-        print(f"Результат операции {a} * {b} равен {a * b}")
+    def multiply(self, first_number, second_number):
+        print(res, first_number * second_number)
 
-    def divide(self, a, b):
-        if b != 0:
-            print(f"Результат операции {a} / {b} равен {a / b}")
+    def divide(self, first_number, second_number):
+        if second_number != 0:
+            print(res, first_number / second_number)
         else:
-            print("Нельзя делить на 0!")
-    def square(self,a, b):
-        print(f"Результат операции {a}^{b} равен {a ** b}")
+            print(config.get("cal", "false_divide"))
+
+    def square(self,first_number, second_number):
+        print(config.get("cal", "res"), first_number ** second_number)
