@@ -20,5 +20,5 @@ class Calculator:
         else:
             print(config.get("cal", "false_divide"))
 
-    def square(self,first_number, second_number):
+    def square(self, first_number, second_number):
         print(config.get("cal", "res"), first_number ** second_number)
